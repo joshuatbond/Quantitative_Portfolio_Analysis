@@ -20,8 +20,6 @@ The first order of business was to read and clean several CSV files for analysis
 4. The whale portfolios and algorithmic portfolio CSV files contain daily returns, but the S&P 500 CSV file contains closing prices. Convert the S&P 500 closing prices to daily returns.
 5. Join `Whale Returns`, `Algorithmic Returns`, and the `S&P 500 Returns` into a single DataFrame with columns for each portfolio's returns.
 
-   ![returns-dataframe.png](Images/returns-dataframe.png)
-
 ## Conduct Quantitative Analysis
 
 Analyze the data to see if any of the portfolios outperform the stock market (i.e., the S&P 500). Under each subsection are the questions I sought to answer.
@@ -40,34 +38,33 @@ Analyze the data to see if any of the portfolios outperform the stock market (i.
 
 ### Rolling Statistics
 
-1. Calculate and plot the rolling standard deviation for all portfolios using a 21-day window.
+1. Calculate and plot the rolling standard deviation for all portfolios using a `21-day` window.
 2. Calculate and plot the correlation between each stock to determine which portfolios may mimick the S&P 500.
-3. Choose one portfolio, then calculate and plot the 60-day rolling beta between it and the S&P 500.
+3. Choose one portfolio, then calculate and plot the `60-day` rolling beta between it and the S&P 500.
 4. Calculate the exponentially weighted moving average (`ewm`) with a 21-day half-life.
 
 ### Sharpe Ratios
 
-Investment managers and their institutional investors look at the return-to-risk ratio, not just the returns. After all, if you have two portfolios that each offer a 10% return, yet one is lower risk, you would invest in the lower-risk portfolio, right?
-
 1. Using the daily returns, calculate and visualize the Sharpe ratios using a bar plot.
 2. Determine whether the algorithmic strategies outperform both the market (S&P 500) and the whales portfolios.
 
-### Create a Custom Portfolio
+## Create a Custom Portfolio
 
-Harold is ecstatic that you were able to help him prove that the algorithmic trading portfolios are doing so well compared to the market and whales portfolios. However, now you are wondering whether you can choose your own portfolio that performs just as well as the algorithmic portfolios. Investigate by doing the following:
+As a final objective of this project, I wanted to create a custom portfolio of 3 stocks and measure its performance against the whale portfolios and algorithmic strategies.
 
-1. Visit [Google Sheets](https://docs.google.com/spreadsheets/) and use the built-in Google Finance function to choose 3-5 stocks for your portfolio.
-2. Download the data as CSV files and calculate the portfolio returns.
-3. Calculate the weighted returns for your portfolio, assuming equal number of shares per stock.
-4. Add your portfolio returns to the DataFrame with the other portfolios.
-5. Run the following analyses:
+Using the [Google Sheets](https://docs.google.com/spreadsheets/) built-in Google Finance function, I downloaded data for the following 3 stocks to create this custom portfolio:
 
-   * Calculate the Annualized Standard Deviation.
-   * Calculate and plot rolling `std` with a 21-day window.
-   * Calculate and plot the correlation.
-   * Calculate and plot beta for your portfolio compared to the S&P 60 TSX.
-   * Calculate the Sharpe ratios and generate a bar plot.
-6. How does your portfolio do?
+1. `TSM` - [Taiwan Semiconductor Manufacturing Company, Limited](https://en.wikipedia.org/wiki/TSMC)
+2. `AMD` - [Advanced Micro Devices, Inc.](https://en.wikipedia.org/wiki/Advanced_Micro_Devices)
+3. `DIS` - [Disney](https://en.wikipedia.org/wiki/The_Walt_Disney_Company)
+
+I then performed the following analyses:
+
+* Calculate the Annualized Standard Deviation.
+* Calculate and plot rolling `std` with a `21-day` window.
+* Calculate and plot the correlation.
+* Calculate and plot beta for the custom portfolio compared to the S&P 500.
+* Calculate the Sharpe ratios and generate a bar plot.
 
 ---
 
